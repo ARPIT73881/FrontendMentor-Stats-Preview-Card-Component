@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+  /* ### Primary colors*/
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --box-shadow: hsl(233, 41%, 8%);
+  /* ### Neutral colors*/
+  --main-heading-stats: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+
+  /* ### Fonts:  */
+  /* Weights: 400, 700  */
+  --font-inter: "Inter", sans-serif;
+  /* Weights: 400 */
+  --font-lexend: "Lexend Deca", sans-serif;
+
+  /* ## Typography
+    body - Font size: 15px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* main container box */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--main-background);
+  padding: 2rem;
+}
+
+/* actual card  */
+.card {
+  background-color: var(--card-background);
+  min-height: 35rem;
+  width: 90rem;
+  max-width: 90rem;
+
+  display: flex;
+  box-shadow: 0rem 1.5rem 0.6rem var(--box-shadow);
+  border-radius: 1rem;
+}
+
+/* section part one -- section content  */
+.section-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  /* padding-right: 5rem; */
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* inside the section -- section header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header h1 {
+  font-size: 3.2rem;
+  color: var(--main-heading-stats);
+  font-family: var(--font-inter);
+}
+
+.header span {
+  color: var(--accent);
+}
+
+.header p {
+  font-size: 1.4rem;
+  color: var(--main-paragraph);
+  font-family: var(--font-lexend);
+  line-height: 1.6;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+/* inside the section -- section footer */
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+/* inside the footer  */
+.child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.child p {
+  font-size: 2rem;
+  color: var(--main-heading-stats);
+  font-family: var(--font-inter);
+  font-weight: 700;
+}
+
+.child span {
+  font-size: 1.2rem;
+  color: var(--main-paragraph);
+  font-family: var(--font-lexend);
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+/* section part two -- section image  */
+.section-image,
+.section-image img {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  width: 100%;
+}
+
+.section-image {
+  background-color: var(--accent);
+  width: 50%;
+}
+
+.section-image img {
+  display: block;
+  height: 100%;
+  /* got this from the comment section of frontendmentor */
+  mix-blend-mode: multiply;
+  opacity: 82%;
+}
+
+/* Responsiveness */
+@media (max-width: 720px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+  }
+
+  .section-content {
+    padding: 6rem;
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+  .section-image,
+  .section-image img {
+    width: 100%;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+  }
+
+  .section-image img {
+    display: block;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
